@@ -1,38 +1,49 @@
-.App {
+body {
   text-align: center;
+  color: #001b24ee;
+  background-color: #effdffee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputForm {
+  padding: 2%;
+  background-color: #ecf2f9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputForm label, input, button {
+  margin: 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cardList {
+  margin: 2%;
+  display: grid;
+  justify-content: space-evenly;
 }
 
-.App-link {
-  color: #61dafb;
+.repoCard p {
+  max-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.repoCard {
+  background-color: white;
+  padding: 4%;
+  margin: 2%;
+  min-width: min-content;
+  color: #56310D;
+  -moz-box-shadow:3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  overflow: hidden;
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.stats p {
+  text-align: left;
+  padding: 3%;
+  margin: auto;
+  width: 80%;
+  BOX-SHADOW: 1px 1px 3px 1px #eaeaea;
+}
+            
