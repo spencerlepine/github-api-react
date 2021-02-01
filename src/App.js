@@ -12,11 +12,7 @@ async function fetchGithub(url = '') {
   const response = await fetch(url);
   return response.json()
 }
- // HERRE: remove console.log stuff\
- // Rank the repo. Give it a score based on forks, watchers, SIZE, stargazers, issues (overall activity)
-  // Commits since creation?
 
- // Get an overview of this users activity
 class App extends React.Component {
   constructor() {
     super()
