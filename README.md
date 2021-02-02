@@ -3,3 +3,5 @@
 To do:
     - Update readme (add desc)
     - update css
+
+![program screenshot](./screenshot.png)
