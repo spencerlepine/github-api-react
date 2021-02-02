@@ -18,9 +18,6 @@ class RepoCard extends Component {
         let repoObj = this.state.repoInfo;
         return (
             // This component is never created until server data is found
-
-            // Rank the repo. Give it a score based on forks, watchers, SIZE, stargazers, issues (overall activity)
-            // Commits since creation?
             <div className="repoCard">
                 <p>{repoObj.full_name} - <a href={`https://github.com/${this.state.owner}/${repoObj.name}`} target="_blank">Source</a></p>
                 <hr/>

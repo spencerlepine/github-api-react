@@ -23,7 +23,11 @@ class App extends React.Component {
   }
 
   printFetch(username) {
-    fetchGithub(`https://api.github.com/users/${username}/repos?sort=pushed`)
+    let message = {
+      'Accept': 'application/vnd.github.v3+json'
+    }
+
+    fetchGithub(`https://api.github.com/users/${username}/repos?sort=pushed`, message)
     .then(response => {
       // Pass data up to this parent component
       this.setState({ serverData: response })
