@@ -11,7 +11,6 @@ class DisplayCards extends Component {
 
         return (
             <div className="cardList">
-                {/*HERE Found _2_ repos for user: _user_*/}
                  {cardList}
             </div>
         )

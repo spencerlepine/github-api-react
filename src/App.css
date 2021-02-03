@@ -48,7 +48,7 @@ button:active {
 }
 
 .cardList {
-  margin: 2%;
+  margin: 2% 2% 6% 2%;
   display: grid;
   justify-content: space-evenly;
 }
@@ -87,4 +87,13 @@ button:active {
 @keyframes spin {
   from {transform: rotate(0Deg);}
   to {transform: rotate(360Deg);}
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  background-color: #dfecee;
+  width: 100%;
+  bottom: 0px;
+  border-top: 2px solid #aac4c7;
 }

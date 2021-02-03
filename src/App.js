@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import SelectUser from "./components/SelectUser"
 import DisplayCards from './components/DisplayCards';
 import Loading from "./components/Loading"
+import Footer from "./components/Footer"
 
 const fetch = require("node-fetch");
 
@@ -57,8 +58,8 @@ class App extends React.Component {
         <Header />
         <SelectUser githubCall={this.printFetch} resetResult={this.resetResult} />
         <Loading loadingState={this.state.isLoading} />
-        <br/>
         {searchResult}
+        <Footer />
     </div>
     );
   }
