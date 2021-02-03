@@ -4,6 +4,7 @@ import React, { Component } from "react"
 import Header from "./components/Header"
 import SelectUser from "./components/SelectUser"
 import DisplayCards from './components/DisplayCards';
+import Loading from "./components/Loading"
 
 const fetch = require("node-fetch");
 
@@ -16,7 +17,8 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      serverData: null
+      serverData: null,
+      isLoading: false
     }
     this.printFetch = this.printFetch.bind(this)
     this.resetResult = this.resetResult.bind(this)
@@ -27,12 +29,18 @@ class App extends React.Component {
       'Accept': 'application/vnd.github.v3+json'
     }
 
-    fetchGithub(`https://api.github.com/users/${username}/repos?sort=pushed`, message)
-    .then(response => {
-      // Pass data up to this parent component
-      this.setState({ serverData: response })
-    })
-    .catch(error => { console.log(error)})  
+    // Fake loading
+    this.setState({ isLoading: true })
+    setTimeout(() => {
+      this.setState({ isLoading: false }) 
+
+      fetchGithub(`https://api.github.com/users/${username}/repos?sort=pushed`, message)
+      .then(response => {
+        // Pass data up to this parent component
+        this.setState({ serverData: response })
+      })
+      .catch(error => { console.log(error)}) 
+    }, 1000);
   }
 
   resetResult() {
@@ -48,6 +56,7 @@ class App extends React.Component {
     <div className="App">
         <Header />
         <SelectUser githubCall={this.printFetch} resetResult={this.resetResult} />
+        <Loading loadingState={this.state.isLoading} />
         <br/>
         {searchResult}
     </div>

@@ -83,4 +83,8 @@ button:active {
   width: 80%;
   BOX-SHADOW: 1px 1px 3px 1px #eaeaea;
 }
-            
+
+@keyframes spin {
+  from {transform: rotate(0Deg);}
+  to {transform: rotate(360Deg);}
+}
