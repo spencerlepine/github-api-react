@@ -1,6 +1,6 @@
 import React from "react"
 
-function Header() {
+function Header(props) {
     return (
         <h1 style={{textAlign: "center"}}>User Repository Overview</h1>
     )
