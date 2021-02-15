@@ -57,7 +57,7 @@ class App extends React.Component {
     <div className="App">
         <Header logo="./assets/GitHub-Mark-64px.png"/>
         <SelectUser githubCall={this.printFetch} resetResult={this.resetResult} />
-        <Loading loadingState={this.state.isLoading} />
+        {this.state.isLoading && <Loading />}
         {searchResult}
         <Footer />
     </div>
