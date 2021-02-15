@@ -9,16 +9,13 @@ class SelectUser extends Component {
             user: '',
             showMe: true
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.openSearch = this.openSearch.bind(this);
     }
 
-    handleChange({ target }) {
-        // Update the state when the user types something
+    handleChange = ({ target }) => {
         this.setState({ user: target.value});
     }
     
-    openSearch() {
+    openSearch = () => {
         this.setState({
             user: '',
             showMe: true
@@ -41,13 +38,15 @@ class SelectUser extends Component {
                             this.setState({showMe: false})
                     }}}
                 >
-                    {/* When this runs, we can manipulate the user value on change, AND any other time we want to  */}
-                    <SearchField handleChange={ this.handleChange } holder={this.state.user} />
+
+                    <SearchField handleChange={ this.handleChange } value={this.state.user} />
                 
                     <button onClick={() => {
                         this.props.githubCall(this.state.user)
                         this.setState({showMe: false})
-                    }}>Go</button>
+                    }}>
+                        Go
+                    </button>
                 </div>
             </div>
         )
